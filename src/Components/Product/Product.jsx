@@ -1,19 +1,26 @@
 import React from 'react'
-
+import  s from './Product.module.css';
+import image from './../../img/Deyzy.jpg';
 const Product = () => {
   return (
-    <div className='product'>
-        <div className="product_img">
-            <img src="#" alt="" />
+    <div className = {s.product}>
+    <h1>Product</h1>
+    <div className={s.product_card} >
+
+        <div className={s.product_img}>
+            <img src={image} alt="deyzy"/>
         </div>
-        <div className="product_info">
-            <div className="product_title">Title</div>
-            <div className="product_price">
-          554$
-            </div>
-            
+        <div className={s.product_info}>
+
+            <div className={s.product_title}>title</div>
+            <div className={s.prodict_price}>price</div>
+           <a href="/">
+            <button>Add to cart</button>
+           </a> 
         </div>
+
     </div>
+</div>
   )
 }
 

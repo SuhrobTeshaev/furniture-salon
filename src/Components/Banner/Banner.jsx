@@ -14,7 +14,7 @@ const Banner = () => {
       <button className={s.more}>КУПИТЬ</button>
     </div>
     <div className={s.middle}>
-        <img src={bannerImg} alt="Banner-image" />
+        <img src={bannerImg} alt="bannerImage" />
     </div>
     <div
       className={s.right}

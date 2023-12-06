@@ -1,9 +1,10 @@
 import React from "react";
+import s from './feedback.module.css';
 import feetback from "./../../img/user-feadback.png";
 const Feetback = () => {
   return (
-    <section className="feetbacks-carusel">
-      <div className="feetback-card">
+    <section className={s.feetback_carusel}>
+      <div className={s.feetback_card}>
         <img src={feetback} alt="feetback" />
         <h4>Елена Новикова</h4>
         <span>Студентка</span>
@@ -13,7 +14,6 @@ const Feetback = () => {
           Спасибо, большое сотрудникам этого чудесного магазина.»
         </p>
       </div>
-      <span>тут будет карусел из точек</span>
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Product.module.css';
+import s from './Products.module.css';
 import { productsList } from "../helpers/ProductList";
 
 
