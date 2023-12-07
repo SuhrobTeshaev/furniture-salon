@@ -3,7 +3,9 @@ import  s from './Product.module.css';
 import image from './../../img/Deyzy.jpg';
 const Product = () => {
   return (
-    <div className = {s.product}>
+    <>
+    {<h3>Product</h3>?(
+       <div className = {s.product}>
     <h1>Product</h1>
     <div className={s.product_card} >
 
@@ -21,6 +23,14 @@ const Product = () => {
 
     </div>
 </div>
+    ):(
+      <div>Пусто</div>
+    )
+
+    }
+    </>
+    
+   
   )
 }
 
