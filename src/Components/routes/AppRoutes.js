@@ -6,14 +6,14 @@ import Home from '../Home/Home';
 import Product from '../Product/Product';
 import Cart from './../Cart/Cart';
 import Favourites from './../Favourites/Favourites';
-import SingleProduct from '../Product/SingleProduct';
+import Products from '../Product/Products';
 
 const AppRoutes = () => {
   return (
     <Routes>
         <Route path={ROUTES.HOME} element={<Home/>}/>
         <Route path={ROUTES.CART} element={<Cart/>}/>
-        <Route path={ROUTES.PRODUCTS} element={<SingleProduct/>}/>
+        <Route path={ROUTES.PRODUCTS} element={<Products/>}/>
         <Route path={ROUTES.PRODUCT} element={<Product/>}/>
         <Route path={ROUTES.FAVOURITE} element={<Favourites/>}/>
     </Routes>
