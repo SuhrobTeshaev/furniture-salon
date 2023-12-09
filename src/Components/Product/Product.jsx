@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import  s from './Product.module.css';
 import { useParams } from 'react-router-dom';
-const Product = ({products}) => {
-const { productId } = useParams();
-const product = products.find(p => p.id === parseInt(productId));
+const Product = () => {
+  const {id} = useParams();
+
+  const [post,setPost] = useState(null);
+  useEffect(()=>{
+    fetch(`https://fakestoreapi.com/products/${id}`)
+      .then((res) => res.json())
+      .then(data =>setPost(data))
+  },[id])
+
   return (
     
        <div className = {s.product}>
-    <h1>Product</h1>
-    <div className={s.product_card} >
+    {post && (
+      <div className={s.product_card} >
 
         <div className={s.product_img}>
-            <img src={product.image} alt="deyzy"/>
+            <img src={post.image} alt="deyzy"/>
         </div>
         <div className={s.product_info}>
 
-            <div className={s.product_title}>{product.title}</div>
-            <div className={s.prodict_price}>{product.price}</div>
+            <div className={s.product_title}>{post.title}</div>
+            <div className={s.product_price}>{post.price}</div>
            <a href="/">
             <button>Add to cart</button>
            </a> 
         </div>
 
     </div>
+    )
+      }
+    
 </div>
    
     

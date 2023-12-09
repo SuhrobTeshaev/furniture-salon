@@ -1,23 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import s from './Cart.module.css';
-import image from './../../img/Piona.jpeg'
 
 const Cart = () => {
+    const [count,setCount] = useState(1);
+    
+
+    function increment() {
+        return setCount(count+1);
+    }
+    function dicrement() {
+        return setCount(count-1);
+    }
+  
   return (
     <>
 <div className={s.cart} >
         <h3>Корзина</h3>
-       <div className={s.cart_card}>
+        {post && (
+          <div className={s.cart_card}>
         <div className={s.cart_img}>
-            <img src={image} alt="#"/>
+            <img src={post.image} alt="#"/>
         </div>
-        <span className={s.price}>335$</span>
+        <p>{post.title}</p>
+        <span className={s.price}>{post.price}</span>
         <div className={s.cart_quantity}>
-            <span className={s.minus} >-</span>
+            <span className={s.minus} onClick={dicrement} >-</span>
             <span className={s.count}>
-           number
+           {count}
             </span>
-            <span className={s.plus} >
+            <span className={s.plus} onClick={increment} >
                 +
             </span>
 
@@ -25,7 +36,9 @@ const Cart = () => {
         <div className={s.close}>
             x
         </div>
-       </div> 
+       </div>   
+        )}
+       
 
        <span>тут будет суммА</span>
     </div> 
