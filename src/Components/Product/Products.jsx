@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import s from "./Products.module.css";
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -41,11 +40,7 @@ const Products = () => {
               <div className={s.price}>{product.price}$</div>
             </div>
             </Link>
-            <Link key={data.id} to={`/cart/${product.id}`}>
-            <div className="action">
-              <button>КУПИТЬ</button>
-            </div>
-            </Link>
+           
             
           </div>
          

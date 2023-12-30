@@ -1,46 +1,43 @@
-import React,{useState} from 'react'
+import React from 'react'
 import s from './Cart.module.css';
+// import image from './../../img/Piona.jpeg'
+import { useMyContext } from '../Context/Context';
 
 const Cart = () => {
-    const [count,setCount] = useState(1);
-    
-
-    function increment() {
-        return setCount(count+1);
-    }
-    function dicrement() {
-        return setCount(count-1);
-    }
-  
+    const {cart} = useMyContext();
   return (
     <>
 <div className={s.cart} >
         <h3>Корзина</h3>
-        {post && (
-          <div className={s.cart_card}>
+        
+        {cart.map(product => 
+             <div className={s.cart_card} key={product.id}>
         <div className={s.cart_img}>
-            <img src={post.image} alt="#"/>
+            <img src={product.image} alt="#"/>
         </div>
-        <p>{post.title}</p>
-        <span className={s.price}>{post.price}</span>
+        <p>{product.title}</p>
+        <span className={s.price}>{product.price}</span>
         <div className={s.cart_quantity}>
-            <span className={s.minus} onClick={dicrement} >-</span>
+            <span className={s.minus}>-</span>
             <span className={s.count}>
-           {count}
+          
             </span>
-            <span className={s.plus} onClick={increment} >
+            <span className={s.plus}  >
                 +
             </span>
 
         </div>
         <div className={s.close}>
-            x
+            
         </div>
        </div>   
-        )}
+        
+            
+            )}
+         
        
 
-       <span>тут будет суммА</span>
+       <span>Total</span>
     </div> 
     
     </>
