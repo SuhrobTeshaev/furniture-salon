@@ -30,7 +30,7 @@ const Products = () => {
     <section>
       <div className={s.products}>
          {data.map(product=>
-         <div className={s.product_card} >
+         <div className={s.product_card} key={product.id}>
             <Link key={data.id} to={`/products/${product.id}`}>
             <div className={s.card_img}>
               <img src={product.image} alt={product.title} />
@@ -39,7 +39,7 @@ const Products = () => {
               <h3>{product.title}</h3>
               <div className={s.price}>{product.price}$</div>
             </div>
-            </Link>
+            </Link>  
            
             
           </div>

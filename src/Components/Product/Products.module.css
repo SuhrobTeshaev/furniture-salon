@@ -2,11 +2,13 @@
     width: 100%;
     margin:  0 15px;
     padding: 10px;
-    border: 1px solid black;
+
 }
 
 .products {
     display: flex;
+    height: 700px;
+    overflow: auto;
     flex-wrap: wrap;
     gap: 10px;
     margin: 20px 20px;

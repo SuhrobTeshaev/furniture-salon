@@ -57,5 +57,6 @@ span {
 
 .close {
     margin:  auto 30px;
+    cursor: pointer;
 }
 

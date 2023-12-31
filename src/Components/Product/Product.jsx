@@ -17,23 +17,22 @@ const Product = () => {
   const addItemToCart = () => {
     setCart([...cart, post]);
   }
-  const removeItem = () => [
-    setCart(cart.filter(c => c.id !== id))
-  ]
+  const removeItem = () => {
+    setCart(cart.filter((c) => c.id !== id));
+  };
+ 
 
   return (
     <div className={s.product}>
       {post && (
-        <div className={s.product_card}>
+        <div className={s.product_card} >
           <div className={s.product_img}>
             <img src={post.image} alt="deyzy" />
           </div>
           <div className={s.product_info}>
             <div className={s.product_title}>{post.title}</div>
             <div className={s.product_price}>{post.price}</div>
-            <div>
               <button onClick={() => addItemToCart()}>Add to cart</button>
-            </div>
           </div>
         </div>
       )}

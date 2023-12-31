@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
 import logo from "./../../img/LOGO.png";
 import { Link } from "react-router-dom";
@@ -7,11 +7,11 @@ import { useMyContext } from "../Context/Context";
 
 const Header = () => {
   const { cart } = useMyContext();
-
-  const totalCount = cart.reduce(
-  (prevValue,currentValue) => prevValue +currentValue.count,
-  0
-  )
+  const [value, setValue] = useState();
+  const handleValue = (e) => {
+      setValue(e.target.value);
+  };
+ 
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -38,8 +38,8 @@ const Header = () => {
             name="search"
             placeholder="Search for anyting..."
             autoComplete="off"
-            onChange=''
-            value=""
+            onChange={handleValue}
+            value={value}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
